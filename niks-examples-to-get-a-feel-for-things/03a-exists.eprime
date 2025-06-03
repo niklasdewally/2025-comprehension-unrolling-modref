@@ -1,0 +1,12 @@
+$ now, lets see what happens when we mix static and dynamic subexpressions in an exist
+
+language ESSENCE' 1.0
+
+$ savilerow expands this model then simplifies it back down, so this can get really slow for larger values of n.
+letting n be 70
+
+find x: int(1..n)
+such that 
+
+or([a < b /\ b < c /\ c % b = a /\ c % a = 2 /\ ((c + b)/a = x) | a,b,c: int(2..n)]),
+x % 5 = 0

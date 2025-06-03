@@ -1,0 +1,10 @@
+letting N be 500  $ Define the range of integers
+ 
+$ Partition the set {1..N} into two classes
+find class_ : function (total) int(1..N) --> int(1..2)
+ 
+such that
+    $ For all possible Pythagorean triples (a, b, c)
+    forAll a, b, c : int(1..N) ,
+        a ** 2 + b ** 2 = c ** 2 .
+        class_(a) != class_(b) \/ class_(b) != class_(c) \/ class_(c) != class_(a)

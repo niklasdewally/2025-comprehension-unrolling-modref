@@ -1,0 +1,26 @@
+language ESSENCE' 1.0
+
+$ What happens when we have a more complicated expression, containing
+$ both static and dynamic expressions in both the antecedent and consequent?
+
+$ TODO: This is a very arbitrary example - think of a reallife example for this
+$ scenario..
+
+
+$ given N: int(1..)
+letting N be 100
+
+$ partition the set {1..N} into two classes
+
+find class_: matrix indexed by [int(1..N)] of int(1..2)
+
+find x: matrix indexed by [int(1..N)] of int(1..N)
+
+such that 
+
+  and([(a**2 + b**2 = c**2 /\ x[a] <= a) -> 
+    or([class_[a] != class_[b], 
+        class_[b] != class_[c], 
+        class_[c] != class_[a]
+      ],a % 11 == 0) | a: int(1..N), b: int(1..N), c: int(1..N)])
+

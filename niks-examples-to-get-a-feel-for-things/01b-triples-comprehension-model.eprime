@@ -1,0 +1,46 @@
+language ESSENCE' 1.0
+
+$ given N: int(1..)
+letting N be 100
+
+$ This model finds values for the induction variables a,b,c where the return
+$ expression *can* be false.
+$
+$     and([(a**2 + b**2 = c**2) -> 
+$       or([class_[a] != class_[b], 
+$           class_[b] != class_[c], 
+$           class_[c] != class_[a]
+$         ]) | a: int(1..N), b: int(1..N), c: int(1..N)])
+$
+$ In the forAll/and case, this removes the vacuous truths, in which the guards
+$ are not satisfied, from the conjunction. An empty conjunction is true, so
+$ removing these is a good idea.
+
+find a,b,c: int(1..N)
+find Z: bool
+
+branching on [a,b,c]
+
+such that
+
+$ X -> Y:
+$ true  -> true         ~~> true
+$ true  -> false        ~~> false
+$ false -> {true,false} ~~> true 
+
+$ false iff the guard is true and Z can be false.
+((a ** 2 + b ** 2 = c ** 2) -> Z) = false
+
+$ Why do we need Z? We don't we just do ((a ** 2) + (b ** 2) = c**2)?
+$
+$ Having Z allows us to do this with more complicated forAlls, that arn't in
+$ the form static-guard -> expression. 
+$
+$ The general rule is to replace all non-static sub-expressions (i.e. those
+$ containing non-induction variables) in the return expression with boolean
+$ variables, and find assignments to the induction variables where the overall
+$ return expression can be false.
+$
+$ This will be explored further in the next example.
+
+

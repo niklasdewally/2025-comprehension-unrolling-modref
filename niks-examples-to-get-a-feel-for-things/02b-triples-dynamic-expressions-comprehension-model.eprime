@@ -1,0 +1,53 @@
+$ given N: int(1..)
+letting N be 100
+
+$ This model finds values for the induction variables a,b,c where the return
+$ expression *can* be false.
+$
+$ We encode dynamic expressions (those that reference variables other than the
+$ induction variables) as boolean dummy variables, representing the fact that
+$ they may either true or false during solving.
+$
+$ and([(a**2 + b**2 = c**2 /\ x[a] <= a) -> 
+$   or([class_[a] != class_[b], 
+$       class_[b] != class_[c], 
+$       class_[c] != class_[a],
+$       a % 11 == 0]) | a: int(1..n), b: int(1..n), c: int(1..n)])
+
+$
+$ We expect 
+$
+$  * a,b,c to satisfy a**2 + b**2 = c**2 (same as 01b). 
+
+$  * No solutions where a % 11 = 0, as the comprehension is always true in this
+$    case.
+$    
+$ Model 01b gives a=11,b=60,c=61 as a solution but this model shouldn't.
+$ 
+
+find a,b,c: int(1..N)
+find Z1,Z2,Z3,Z4: bool
+
+branching on [a,b,c]
+
+such that
+
+((a ** 2 + b ** 2 = c ** 2 /\ Z1) -> (or[Z2,Z3,Z4,a % 11 = 0]) != true 
+
+$ ----
+$ if we detect static guards and move them to after the | in the comprehension (as in my dissertation).
+$
+$ and([(x[a] <= a) -> 
+$   or([class_[a] != class_[b], 
+$       class_[b] != class_[c], 
+$       class_[c] != class_[a],
+$       a % 11 == 0]) | a: int(1..n), b: int(1..n), c: int(1..n), a**2 + b ** 2 = c**2])
+$
+$ we would end up with this model:
+
+a ** 2 + b ** 2 = c ** 2,
+Z1 -> (or[Z2,Z3,Z4,a % 11 = 0]) != true 
+
+
+$ this shouldn't make a difference, so lets not do static guard detection and relocation for now!
+

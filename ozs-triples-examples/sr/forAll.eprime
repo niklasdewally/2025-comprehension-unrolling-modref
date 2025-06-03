@@ -1,0 +1,28 @@
+language ESSENCE' 1.0
+
+given N: int
+
+$ Partition the set {1..N} into two classes
+find class_ : matrix [int(1..N)] of int(1..2)
+ 
+such that
+    $ For all possible Pythagorean triples (a, b, c)
+
+    $ fast
+    forAll a, b, c : int(1..N) .
+       (a < b /\ b < c /\ a ** 2 + b ** 2 = c ** 2) ->
+       class_[a] != class_[b] \/ class_[b] != class_[c] \/ class_[c] != class_[a]
+
+    $ slow
+    $ and([ (a < b /\ b < c /\ a ** 2 + b ** 2 = c ** 2) -> class_[a] != class_[b] \/ class_[b] != class_[c] \/ class_[c] != class_[a]
+    $     | a, b, c : int(1..N)
+    $     ])
+
+    $ fast
+   $  and([ class_[a] != class_[b] \/ class_[b] != class_[c] \/ class_[c] != class_[a]
+   $      | a, b, c : int(1..N)
+   $      , a ** 2 + b ** 2 = c ** 2
+   $      , a < b
+   $      , b < c
+   $      ])
+

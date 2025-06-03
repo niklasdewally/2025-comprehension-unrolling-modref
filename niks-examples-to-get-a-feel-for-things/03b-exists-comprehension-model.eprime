@@ -1,0 +1,32 @@
+$ Let us generalise the approach we used for forAll.
+$ 
+$ An element in a comprehension can be safely eliminated if it always evaluates
+$ to to the identity of the comprehension operator. For example, an empty or
+$ evaluates to false, so we can safely remove any false operands.
+$
+$ Thus, when unrolling a comprehension, we only to keep assignments for the
+$ induction variables where the return expression can be not equal to the
+$ identity.
+$
+$ Operation   Identity
+$ ----------  ---------
+$ and         true
+$ or          false
+$ sum         0
+$ product     1
+
+letting n be 70
+
+$ the model we are unrolling 
+$
+$ find x: int(1..n)
+$ such that 
+
+$ or([a < b /\ b < c /\ c % b = a /\ c % a = 2 /\ ((c + b)/a = x) | a,b,c: int(2..n)]),
+$ x % 5 = 0
+
+find a,b,c: int(2..n) 
+find Z: bool
+
+such that
+(a < b /\ b < c /\ c % b = a /\ c % a = 2 /\ Z) = true

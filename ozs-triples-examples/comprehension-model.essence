@@ -1,0 +1,40 @@
+
+letting N be 1000
+
+find a,b,c : int(1..N)
+find Z : bool
+
+$ forAll
+such that ((a < b /\ b < c /\ a ** 2 + b ** 2 = c ** 2) -> Z) = false
+$ such that !((a < b /\ b < c /\ a ** 2 + b ** 2 = c ** 2) -> Z)
+$ such that !(!(a < b /\ b < c /\ a ** 2 + b ** 2 = c ** 2) \/ Z)
+$ such that (a < b /\ b < c /\ a ** 2 + b ** 2 = c ** 2) /\ !Z)
+
+$ exists
+$ such that ((a < b /\ b < c /\ a ** 2 + b ** 2 = c ** 2) /\ Z) = true
+$ such that ((a < b /\ b < c /\ a ** 2 + b ** 2 = c ** 2) /\ Z)
+
+$ sum
+$ such that (toInt(a < b /\ b < c /\ a ** 2 + b ** 2 = c ** 2) * toInt(Z)) != 0
+$ such that ((a < b /\ b < c /\ a ** 2 + b ** 2 = c ** 2) /\ Z)
+
+$ such that i*j!=0
+$ such that i /\ j
+
+$ branching on [a,b,c]
+
+$ we are interested in cases where the return expression can be false
+$ if it must be true, we will skip that anyway
+
+
+
+
+
+$ Z can be false/true in interesting solutions
+$ if Z can only be
+$ if blob must be false
+
+$ find a,b,c : int(1..N)
+$ such that a < b /\ b < c /\ a ** 2 + b ** 2 = c ** 2
+
+

@@ -1,0 +1,22 @@
+language ESSENCE' 1.0
+
+
+$ original model
+
+$ find x: int(1..30)
+$ find y: int(1..30)
+
+$ such that
+
+$ exists a,b,c: int(1..20).
+$   x < c /\ !((a<b) = (x<b)) /\ ((x<b) = (c<b))
+
+$ find values of a,b,c such that the solution may be true
+$ no cse for now
+
+find a,b,c: int(1..20)
+find Z1,Z2,Z3: bool
+branching on [a,b,c]
+
+such that 
+(Z1 /\ (!((a<b) = Z2)) /\ (Z3 = (c<b))) = true
