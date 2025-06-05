@@ -28,7 +28,7 @@ df <- read_csv(time_data_path) %>%
 
 df <- df %>% 
   rename(`Model` = `model`) %>%
-  rename(`Program`=`command`) %>%
+  rename(`Program`=`command`) #%>%
   # mutate(`Program`=case_when(`Program` == "conjureoxide" ~ "Conjure Oxide",
   #                            `Program` == "savilerow" ~ "Savile Row (-O0)"))
 
