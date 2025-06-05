@@ -1,0 +1,27 @@
+language ESSENCE' 1.0
+$ expand_ac generator model
+
+find i,j :int(1..10)
+find Z1: int(1..10)
+find Z2: int(0..1)
+
+such that 
+
+i%j=0
+
+$ untransformed return expr
+$ (i*j + y[i]) * toInt(i%z=0) != 0 
+
+
+$ transformed return expr, 
+$ if Z vars can only be booleans
+$
+$ (i*j + y[i]) * toInt(Z) != 0 
+$
+$ uh oh, non-induction vars left over!
+
+$ transformed return expr, if Z vars for sums are ints 
+(i*j + Z1) * Z2 ! = 0
+
+$ general principle: the type of expression we turn into a Z var is the type of
+$ the identity value of the ac operator.

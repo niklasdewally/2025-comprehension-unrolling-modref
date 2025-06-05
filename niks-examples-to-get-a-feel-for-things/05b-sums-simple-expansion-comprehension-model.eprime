@@ -1,0 +1,9 @@
+language ESSENCE' 1.0
+
+$ simple generator model (just static guards)
+
+find i,j:int(1..10)
+
+such that 
+
+i%j=0
