@@ -24,11 +24,11 @@ function do_parallel() {
 
 
 function main() {
-  find models_with_params/ -iname '*.eprime' | sort | parallel -j${workers} --eta doit
+  find models_with_params/ -iname '*.eprime' | sort | parallel -j${workers} --eta do_parallel
 }
 
 
-export -f doit
+export -f do_parallel
 export -f main 
 
 
