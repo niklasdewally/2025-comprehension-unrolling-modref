@@ -62,6 +62,8 @@ output/time_figs:
 .PHONY: clean
 clean: 
 	rm -rf models_with_params
+	rm -rf bin
+	rm -rf output
 
 .PHONY: debug
 debug:
