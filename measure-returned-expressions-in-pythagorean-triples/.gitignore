@@ -1,0 +1,6 @@
+*.log
+*.eprime.*
+*.json
+
+output/
+models_with_params/
