@@ -4,7 +4,7 @@
 # Run using makefile!
 
 export runs=2
-export mem_ulimit_gb=64
+export mem_ulimit_gb=100
 export workers=5
 export warmups=1
 

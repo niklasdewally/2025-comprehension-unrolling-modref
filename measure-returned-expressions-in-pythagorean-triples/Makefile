@@ -1,6 +1,6 @@
 
 # NS = 025 050 075 100 125 150
-NS = 025 050 075 100 
+NS = 025 050 075 
 
 MODELS = $(shell find models/ -iname '*.eprime')
 
