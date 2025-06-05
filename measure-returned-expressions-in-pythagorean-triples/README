@@ -1,6 +1,10 @@
 
 (Hacked on top of my diss experiments. README from my diss repo is below)
 
+
+`make time-data` to run time benchmarks (requires rustup, GNU parallel, hyperfine)
+`make time-figs` to run time benchmarks and make plots (requires the above, plus R)
+
 --- 
 
 Essence Prime models and benchmarks for the Pythagorean Triples theorem, as discussed by

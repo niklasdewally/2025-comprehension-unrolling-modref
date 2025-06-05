@@ -1,15 +1,32 @@
 #!/usr/bin/env Rscript
 
-library(dplyr)
-library(readr)
-library(ggplot2)
-library(tidyr)
+# ensure libraries are installed 
+if(!require(dplyr)){
+    install.packages("dplyr")
+    library(dplyr)
+}
 
-path <- "output/time-data.csv"
-data <- read_csv(path) %>% 
+if(!require(readr)){
+    install.packages("readr")
+    library(readr)
+}
+
+if(!require(ggplot2)){
+    install.packages("ggplot2")
+    library(ggplot2)
+}
+
+if(!require(tidyr)){
+    install.packages("tidyr")
+    library(tidyr)
+}
+
+time_data_path <- "output/time-data.csv"
+
+df <- read_csv(time_data_path) %>% 
   tidyr::unite('group',model,command,remove=FALSE)
 
-data <- data %>% 
+df <- df %>% 
   rename(`Model` = `model`) %>%
   rename(`Program`=`command`) %>%
   # mutate(`Program`=case_when(`Program` == "conjureoxide" ~ "Conjure Oxide",
@@ -17,7 +34,7 @@ data <- data %>%
 
 
 
-# ggplot(data) + 
+# ggplot(df) + 
 #   aes(x=`n`, y=`mean`,group=`group`,color=`Program`,linetype=`Model`) + 
 #   geom_path() + 
 #   geom_point() + 
@@ -26,7 +43,7 @@ data <- data %>%
 #   ggtitle('Boolean Pythagorean Triples Problem: Time to Unrolled Comprehensions')  + 
 #   theme_minimal()
 
-# ggplot(data) + 
+# ggplot(df) + 
 #   aes(x=`n`, y=log(`mean`,10),group=`group`,color=`Program`,linetype=`Model`) + 
 #   geom_path() + 
 #   geom_point() + 
@@ -35,7 +52,7 @@ data <- data %>%
 #   ggtitle('Boolean Pythagorean Triples Problem: Time to Unrolled Comprehensions')  + 
 #   theme_minimal()
 
-plt <- ggplot(data) + 
+plt <- ggplot(df) + 
   aes(x=`n`, y=log(`mean`,10),group=`Program`,color=`Program`) + 
   geom_path() + 
   geom_point() + 
@@ -45,7 +62,7 @@ plt <- ggplot(data) +
 
 ggsave('output/time_figs/plot.png',plt)
 
-# ggplot(data) + 
+# ggplot(df) + 
 #   aes(x=`n`, y=log(`mean`,10),group=`Model`,color=`Program`,linetype=`Model`) + 
 #   geom_path() + 
 #   geom_point() + 

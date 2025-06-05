@@ -5,9 +5,11 @@ MODELS = $(shell find models/ -iname '*.eprime')
 
 
 
+## run time benchmarks and create figures (requires R + tidyverse libraries)
 .PHONY: time-figs
-time-figs: 
+time-figs: output/time_figs/plot.png
 
+## run time benchmarks 
 .PHONY: time-data
 time-data: output/time-data.csv 
 
@@ -27,12 +29,13 @@ $(foreach N,$(NS),$(eval $(call modelrule,$(N))))
 # download and build the experiment's branch of conjure oxide, which exits
 # after unrolling, printing the # of expressions in the unrolled comprehension. 
 bin/conjure_oxide:
-	mkdir -p bin
-	bin_dir=$$(realpath bin)\
-	tmpdir=$$(mktemp -d)\
-	cd "$$tmpdir"\
-	git pull https://github.com/conjure-cp/conjure-oxide.git --single-branch --branch 'nik/more-comprehensions-experiment-unroll-and-exit' .\
-	cargo build --release\
+	mkdir -p bin;
+	bin_dir=$$(realpath bin);\
+	tmpdir=$$(mktemp -d);\
+	cd "$$tmpdir";\
+	git clone https://github.com/conjure-cp/conjure-oxide.git --single-branch --branch 'nik/more-comprehensions-experiment-unroll-and-exit' .;\
+	git submodule update --init --remote;\
+	cargo build --release; \
 	cp target/release/conjure_oxide $$bin_dir
 
 # run time benchmarks and concat results into single csv
