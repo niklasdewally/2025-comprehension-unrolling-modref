@@ -3,7 +3,7 @@
 
 # Run using makefile!
 
-export runs=5
+export runs=2
 export mem_ulimit_gb=64
 export workers=5
 export warmups=1
@@ -15,7 +15,7 @@ export conjure_oxide="$(realpath bin/conjure_oxide)"
 
 function do_parallel() {
   model="$1"
-  hyperfine -i --runs=${runs} --warmup ${warmups} \
+  hyperfine --runs=${runs} --warmup ${warmups} \
     -n conjureoxide_expand_simple "ulimit -Sv ${mem_ulimit_gb}000000 && exec ${conjure_oxide} --no-use-expand-ac solve $model"\
     -n conjureoxide_expand_ac     "ulimit -Sv ${mem_ulimit_gb}000000 && exec ${conjure_oxide} solve $model"\
     --export-csv output/raw_time_data/"$(basename $model)_results.csv" 
