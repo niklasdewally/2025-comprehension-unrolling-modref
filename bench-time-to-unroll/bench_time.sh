@@ -82,15 +82,20 @@ benchone() {
 
   case ${type} in 
     "simple") 
-      output=$(realtime output/co_build/target/release/conjure_oxide --no-use-expand-ac solve "$model_file")
-      n_exprs=$(echo "$output" | sed -n 's/number of expressions returned in the expansion: \(.*\)/\1/p')
-      time_s=$(tail -1 output)
+      # times go to stderr, conjure oxide output (expr count) to stdout
+      tmp_stderr=$(mktemp)
+      tmp_stdout=$(mktemp)
+      realtime output/co_build/target/release/conjure_oxide --no-use-expand-ac solve "$model_file" > "$tmp_stdout" 2> "$tmp_stderr"
+      n_exprs=$(sed -n 's/number of expressions returned in the expansion: \(.*\)/\1/p' "$tmp_stdout")
+      time_s=$(cat "$tmp_stderr")
       echo "${model},${n},${type},${time_s},${n_exprs}" >> "$time_data_path"
       ;;
     "expand_ac")
-      output=$(realtime output/co_build/target/release/conjure_oxide --no-use-expand-ac solve "$model_file")
-      n_exprs=$(echo "$output" | sed -n 's/number of expressions returned in the expansion: \(.*\)/\1/p')
-      time_s=$(tail -1 output)
+      tmp_stderr=$(mktemp)
+      tmp_stdout=$(mktemp)
+      realtime output/co_build/target/release/conjure_oxide solve "$model_file" > "$tmp_stdout" 2> "$tmp_stderr"
+      n_exprs=$(sed -n 's/number of expressions returned in the expansion: \(.*\)/\1/p' "$tmp_stdout")
+      time_s=$(cat "$tmp_stderr")
       echo "${model},${n},${type},${time_s},${n_exprs}" >> "$time_data_path"
       ;;
     *)
@@ -108,4 +113,4 @@ parallel --progress --no-notice --joblog output/job_log --timeout 600 -j$n_cores
   ::: $(find models/ -iname '*.eprime' -exec basename {} .eprime \;)\
   ::: $ns\
   ::: expand_ac simple\
-  ::: repeat $(seq 1 $repeats 1)
+  ::: $(seq 1 $repeats)
