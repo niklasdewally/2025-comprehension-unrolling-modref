@@ -23,7 +23,7 @@ err() {
 
 n_cores=${BENCH_N_CORES:-5}
 repeats=${BENCH_REPEATS:-3}
-ns=${BENCH_N_VALUES:-"25 50 75"}
+ns=${BENCH_N_VALUES:-"25 50 75 100 125"}
 # max_mem_gb=${BENCH_MAX_MEM_GB:-50}
 time_data_path=$(realpath -m ${BENCH_TIME_DATA_PATH:-"$(dirname $0)/output/time_data.csv"})
 
@@ -109,7 +109,7 @@ export time_data_path
 export -f realtime benchone err
 
 # TODO: better way to deal with timeouts?
-parallel --progress --no-notice --joblog output/job_log --timeout 1200 -j$n_cores benchone {1} {2} {3}\
+parallel --progress --no-notice --joblog output/job_log --timeout 2400 -j$n_cores benchone {1} {2} {3}\
   ::: $(find models/ -iname '*.eprime' -exec basename {} .eprime \;)\
   ::: $ns\
   ::: expand_ac simple\
