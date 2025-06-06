@@ -9,7 +9,6 @@
 
 # if something fails, exit immediately
 set -e 
-set -x
 set -o pipefail
 
 info() {
@@ -23,16 +22,18 @@ err() {
 # parameters
 
 n_cores=${BENCH_N_CORES:-5}
-ns=${BENCH_N_VALUES:-"25 50 75 100"}
-max_mem_gb=${BENCH_MAX_MEM_GB:-50}
+repeats=${BENCH_REPEATS:-3}
+ns=${BENCH_N_VALUES:-"25 50 75"}
+# max_mem_gb=${BENCH_MAX_MEM_GB:-50}
 time_data_path=$(realpath -m ${BENCH_TIME_DATA_PATH:-"$(dirname $0)/output/time_data.csv"})
 
 max_mem_kb="${max_mem_gb}000000"
 conjure_oxide_branch="nik/more-comprehensions-experiment-unroll-and-exit"
 
 info "using ${n_cores} cores"
-info "using maximum ${max_mem_gb}gb RAM per conjure_oxide proces"
+# info "using maximum ${max_mem_gb}gb RAM per conjure_oxide proces"
 info "values of n: ${ns}"
+info "doing ${repeats} repeats"
 info "writing results to: ${time_data_path}"
 
 
@@ -107,4 +108,4 @@ parallel --progress --no-notice --joblog output/job_log --timeout 600 -j$n_cores
   ::: $(find models/ -iname '*.eprime' -exec basename {} .eprime \;)\
   ::: $ns\
   ::: expand_ac simple\
-  ::: repeat $(seq 1 2 1)
+  ::: repeat $(seq 1 $repeats 1)
