@@ -109,7 +109,7 @@ export time_data_path
 export -f realtime benchone err
 
 # TODO: better way to deal with timeouts?
-parallel --progress --no-notice --joblog output/job_log --timeout 600 -j$n_cores benchone {1} {2} {3}\
+parallel --progress --no-notice --joblog output/job_log --timeout 1200 -j$n_cores benchone {1} {2} {3}\
   ::: $(find models/ -iname '*.eprime' -exec basename {} .eprime \;)\
   ::: $ns\
   ::: expand_ac simple\
