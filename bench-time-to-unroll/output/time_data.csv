@@ -18,3 +18,4 @@ static_guards,125,simple,0.16,142
 guards_in_return_expression,50,simple,95.86,125000
 guards_in_return_expression,75,simple,347.79,421875
 guards_in_return_expression,100,simple,774.62,1000000
+guards_in_return_expression,125,simple,1431.97,1953125
