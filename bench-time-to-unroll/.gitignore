@@ -1,0 +1,6 @@
+*.log
+*.eprime.*
+*.json
+
+output/
+bin/

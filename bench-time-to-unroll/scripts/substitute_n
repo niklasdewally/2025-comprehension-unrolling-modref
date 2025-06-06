@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#
+# ./substitute_n <model> <value for n>
+#
+# Substitute the given value for the parameter n in the given eprime model,
+# printing the resulting model to stdout.
+#
+# Author: niklasdewally
+# Date: 2025/06/06
+
+
+model=${1:?Not enough arguments: ./substitute_n <model> <value for n>}
+n=${2:?Not enough arguments: ./substitute_n <model> <value for n>}
+
+sed "s/given n.*/letting n be ${n}/g" < "${model}"
