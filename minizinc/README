@@ -1,0 +1,4 @@
+Here, we run the benchmark for minizinc (rewriting time), to see how it scales.
+
+
+Models contain Minizinc versions of the E' models in bench-time-to-unroll/models.
