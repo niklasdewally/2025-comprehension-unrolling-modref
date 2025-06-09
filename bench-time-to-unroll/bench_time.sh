@@ -25,8 +25,8 @@ n_cores=${BENCH_N_CORES:-5}
 repeats=${BENCH_REPEATS:-3}
 ns=${BENCH_N_VALUES:-"25 50 75 100 125"}
 # max_mem_gb=${BENCH_MAX_MEM_GB:-50}
-unroll_then_exit_data_path=$(realpath -m "output/unroll_then_exit_time_data.csv"})
-time_data_path=$(realpath -m "output/time_data.csv"})
+unroll_then_exit_data_path=$(realpath -m "output/unroll_then_exit_time_data.csv")
+time_data_path=$(realpath -m "output/time_data.csv")
 
 # max_mem_kb="${max_mem_gb}000000"
 conjure_oxide_unroll_then_exit_branch="modref25-unroll-then-exit"
@@ -95,6 +95,8 @@ benchone() {
 
   model_file="output/models_with_params/${model}-${n}.eprime"
 
+  rm -rf *.log *.json
+
   case ${type} in 
     "simple_uta") 
       # times go to stderr, conjure oxide output (expr count) to stdout
@@ -115,22 +117,30 @@ benchone() {
       ;;
 
     "simple") 
-      time_s=$(realtime out/co_build/target/release/conjure_oxide solve --no-expand-ac -n1 "$model_file")
+      tmp_stderr=$(mktemp)
+      realtime output/co_build/target/release/conjure_oxide solve --no-expand-ac -n1 "$model_file" >/dev/null 2> "$tmp_stderr"
+      time_s=$(cat "$tmp_stderr")
       echo "${model},${n},co_simple,${time_s}" >> "$time_data_path"
       ;;
 
     "expand_ac") 
-      time_s=$(realtime out/co_build/target/release/conjure_oxide solve -n1 "$model_file" )
-      echo "${model},${n},co_simple,${time_s}" >> "$time_data_path"
+      tmp_stderr=$(mktemp)
+      realtime output/co_build/target/release/conjure_oxide solve -n1 "$model_file" >/dev/null 2> "$tmp_stderr"
+      time_s=$(cat "$tmp_stderr")
+      echo "${model},${n},co_expand_ac,${time_s}" >> "$time_data_path"
       ;;
 
     "sr_O0")
-      time_s=$(realtime savilerow -O0 -run-solver "$model_file")
+      tmp_stderr=$(mktemp)
+      realtime savilerow -O0 -run-solver "$model_file" >/dev/null 2> "$tmp_stderr"
+      time_s=$(cat "$tmp_stderr")
       echo "${model},${n},sr_O0,${time_s}" >> "$time_data_path"
       ;;
 
     "sr_O3")
-      time_s=$(realtime savilerow -O3 -run-solver "$model_file")
+      tmp_stderr=$(mktemp)
+      realtime savilerow -O3 -run-solver "$model_file"  >/dev/null 2> "$tmp_stderr"
+      time_s=$(cat "$tmp_stderr")
       echo "${model},${n},sr_O3,${time_s}" >> "$time_data_path"
       ;;
 
@@ -145,8 +155,8 @@ export unroll_then_exit_data_path time_data_path
 export -f realtime benchone err
 
 # TODO: better way to deal with timeouts?
-parallel --progress --no-notice --joblog output/job_log --timeout 3600 -j$n_cores benchone {1} {2} {3}\
+parallel --progress --eta --no-notice --joblog output/job_log --timeout 3600 -j$n_cores benchone {1} {2} {3}\
   ::: $(find models/ -iname '*.eprime' -exec basename {} .eprime \;)\
   ::: $ns\
-  ::: expand_ac_uta simple_uta expand_ac simple sr_00 sr_\
+  ::: expand_ac_uta simple_uta expand_ac simple sr_O0 sr_O3\
   ::: $(seq 1 $repeats)
