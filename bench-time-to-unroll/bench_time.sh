@@ -28,7 +28,7 @@ ns=${BENCH_N_VALUES:-"25 50 75 100 125"}
 time_data_path=$(realpath -m ${BENCH_TIME_DATA_PATH:-"$(dirname $0)/output/time_data.csv"})
 
 max_mem_kb="${max_mem_gb}000000"
-conjure_oxide_branch="nik/more-comprehensions-experiment-unroll-and-exit"
+conjure_oxide_branch="modref25-unroll-then-exit"
 
 info "using ${n_cores} cores"
 # info "using maximum ${max_mem_gb}gb RAM per conjure_oxide proces"
@@ -85,7 +85,7 @@ benchone() {
       # times go to stderr, conjure oxide output (expr count) to stdout
       tmp_stderr=$(mktemp)
       tmp_stdout=$(mktemp)
-      realtime output/co_build/target/release/conjure_oxide --no-use-expand-ac solve "$model_file" > "$tmp_stdout" 2> "$tmp_stderr"
+      realtime output/co_build/target/release/conjure_oxide --no-expand-ac solve "$model_file" > "$tmp_stdout" 2> "$tmp_stderr"
       n_exprs=$(sed -n 's/number of expressions returned in the expansion: \(.*\)/\1/p' "$tmp_stdout")
       time_s=$(cat "$tmp_stderr")
       echo "${model},${n},${type},${time_s},${n_exprs}" >> "$time_data_path"
