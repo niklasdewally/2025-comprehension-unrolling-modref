@@ -14,4 +14,6 @@ and([or([class[a] != class[b]
    | a: int(1..n), 
      b:int(1..n), 
      c:int(1..n), 
+     a<=b,
+     a<=c
      a** 2 + b **2 = c**2])

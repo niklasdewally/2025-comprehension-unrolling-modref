@@ -42,43 +42,47 @@ info "writing standard results to: ${time_data_path}"
 
 cd "$(dirname $0)"
 
-# prepare intermediate folders
-rm -rf output/models_with_params output/co_unroll_then_exit_build output/co_build
-mkdir -p output/models_with_params output/co_unroll_then_exit_build output/co_build
+if [[ -e output/joblog ]]; then
+  info "found job log (output/joblog): skipping setup"
+else
+  info "no job log: running setup"
+  # prepare intermediate folders
+  rm -rf output/models_with_params output/co_unroll_then_exit_build output/co_build
+  mkdir -p output/models_with_params output/co_unroll_then_exit_build output/co_build
 
-info "building latest conjure oxide (unroll then exit) build from branch ${conjure_oxide_unroll_then_exit_branch}"
-git clone "https://github.com/conjure-cp/conjure-oxide.git" --branch "${conjure_oxide_unroll_then_exit_branch}" --single-branch output/co_unroll_then_exit_build
+  info "building latest conjure oxide (unroll then exit) build from branch ${conjure_oxide_unroll_then_exit_branch}"
+  git clone "https://github.com/conjure-cp/conjure-oxide.git" --branch "${conjure_oxide_unroll_then_exit_branch}" --single-branch output/co_unroll_then_exit_build
 
-pushd output/co_unroll_then_exit_build
-git submodule update --init --remote 
-if ! [[ -x "$(command -v rustup)" ]]; then
+  pushd output/co_unroll_then_exit_build
+  git submodule update --init --remote 
+  if ! [[ -x "$(command -v rustup)" ]]; then
   err "could not find rustup!"
   exit 1
-fi
-cargo build --release
-popd
+  fi
+  cargo build --release
+  popd
 
-info "building latest conjure oxide build from branch ${conjure_oxide_branch}"
-git clone "https://github.com/conjure-cp/conjure-oxide.git" --branch "${conjure_oxide_branch}" --single-branch output/co_build
+  info "building latest conjure oxide build from branch ${conjure_oxide_branch}"
+  git clone "https://github.com/conjure-cp/conjure-oxide.git" --branch "${conjure_oxide_branch}" --single-branch output/co_build
 
-pushd output/co_build
-git submodule update --init --remote 
-if ! [[ -x "$(command -v rustup)" ]]; then
+  pushd output/co_build
+  git submodule update --init --remote 
+  if ! [[ -x "$(command -v rustup)" ]]; then
   err "could not find rustup!"
   exit 1
-fi
-cargo build --release
-popd
+  fi
+  cargo build --release
+  popd
 
-info "building models"
+  info "building models"
 
-for model in $(find models -iname "*.eprime"); do 
+  for model in $(find models -iname "*.eprime"); do 
   for n in $ns; do
     model_name="$(basename ${model} .eprime)"
     ./scripts/substitute_n "${model}" $n > "./output/models_with_params/${model_name}-${n}.eprime"
   done
-done
-
+  done
+fi
 
 info "running it!"
 echo "model,n,bench,realtime_s,n_exprs_in_expansion" > ${unroll_then_exit_data_path}
@@ -155,8 +159,8 @@ export unroll_then_exit_data_path time_data_path
 export -f realtime benchone err
 
 # TODO: better way to deal with timeouts?
-parallel --progress --eta --no-notice --joblog output/job_log --timeout 3600 -j$n_cores benchone {1} {2} {3}\
-  ::: $(find models/ -iname '*.eprime' -exec basename {} .eprime \;)\
+parallel --progress --eta --no-notice --joblog output/joblog --resume --timeout 3600 -j$n_cores benchone {1} {2} {3}\
+  ::: $(find models/ -iname '*.eprime' -exec basename {} .eprime \; | sort)\
   ::: $ns\
   ::: expand_ac_uta simple_uta expand_ac simple sr_O0 sr_O3\
   ::: $(seq 1 $repeats)

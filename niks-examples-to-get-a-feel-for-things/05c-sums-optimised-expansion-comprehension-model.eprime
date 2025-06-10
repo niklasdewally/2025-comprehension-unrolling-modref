@@ -25,3 +25,11 @@ $ transformed return expr, if Z vars for sums are ints
 
 $ general principle: the type of expression we turn into a Z var is the type of
 $ the identity value of the ac operator.
+
+
+$ why can't we use ints for forAlls:
+
+$ find x,y: bool
+$ such that
+$ forAll i,j: int(1..5). x \/ y
+
