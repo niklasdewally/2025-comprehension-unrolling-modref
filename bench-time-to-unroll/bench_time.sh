@@ -21,9 +21,9 @@ err() {
 
 # parameters
 
-n_cores=${BENCH_N_CORES:-5}
+n_cores=${BENCH_N_CORES:-4}
 repeats=${BENCH_REPEATS:-3}
-ns=${BENCH_N_VALUES:-"25 50 75 100 125"}
+ns=${BENCH_N_VALUES:-"25 50 75 100"}
 # max_mem_gb=${BENCH_MAX_MEM_GB:-50}
 unroll_then_exit_data_path=$(realpath -m "output/unroll_then_exit_time_data.csv")
 time_data_path=$(realpath -m "output/time_data.csv")
@@ -82,11 +82,11 @@ else
     ./scripts/substitute_n "${model}" $n > "./output/models_with_params/${model_name}-${n}.eprime"
   done
   done
+  echo "model,n,bench,realtime_s,n_exprs_in_expansion" > ${unroll_then_exit_data_path}
+  echo "model,n,bench,realtime_s_to_first_solution" > ${time_data_path}
 fi
 
 info "running it!"
-echo "model,n,bench,realtime_s,n_exprs_in_expansion" > ${unroll_then_exit_data_path}
-echo "model,n,bench,realtime_s_to_first_solution" > ${time_data_path}
 
 realtime () {
   command time -f "%e" "$@"
@@ -156,10 +156,10 @@ benchone() {
 }
 
 export unroll_then_exit_data_path time_data_path
-export -f realtime benchone err
+export -f realtime benchone err 
 
 # TODO: better way to deal with timeouts?
-parallel --progress --eta --no-notice --joblog output/joblog --resume --timeout 3600 -j$n_cores benchone {1} {2} {3}\
+parallel --progress --eta --no-notice --joblog output/joblog --resume --timeout 3600 --memfree=25% -j$n_cores benchone {1} {2} {3} \
   ::: $(find models/ -iname '*.eprime' -exec basename {} .eprime \; | sort)\
   ::: $ns\
   ::: expand_ac_uta simple_uta expand_ac simple sr_O0 sr_O3\
