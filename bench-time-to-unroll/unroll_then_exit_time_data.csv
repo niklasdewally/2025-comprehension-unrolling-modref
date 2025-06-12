@@ -1,70 +1,61 @@
 model,n,bench,realtime_s,n_exprs_in_expansion
-guards_in_return_expression,10,expand_ac,5.92,2
-guards_in_return_expression,10,expand_ac,6.30,2
-guards_in_return_expression,10,expand_ac,6.10,2
-guards_in_return_expression,10,simple,14.64,1000
-guards_in_return_expression,20,expand_ac,5.94,6
-guards_in_return_expression,10,simple,14.70,1000
-guards_in_return_expression,20,expand_ac,5.93,6
-guards_in_return_expression,10,simple,14.69,1000
-guards_in_return_expression,20,expand_ac,6.03,6
-guards_in_return_expression,20,simple,77.13,8000
-guards_in_return_expression,30,expand_ac,6.08,11
-guards_in_return_expression,20,simple,78.08,8000
-guards_in_return_expression,30,expand_ac,5.99,11
-guards_in_return_expression,20,simple,77.25,8000
-guards_in_return_expression,30,expand_ac,6.00,11
-guards_in_return_expression,30,simple,247.74,27000
-guards_in_return_expression,30,simple,249.04,27000
-guards_in_return_expression,30,simple,250.63,27000
+guards_in_return_expression,10,expand_ac,5.88,2
+guards_in_return_expression,10,expand_ac,6.04,2
+guards_in_return_expression,10,simple,14.72,1000
+guards_in_return_expression,20,expand_ac,5.92,6
+guards_in_return_expression,10,simple,14.60,1000
+guards_in_return_expression,20,expand_ac,6.00,6
+guards_in_return_expression,20,simple,77.41,8000
+guards_in_return_expression,30,expand_ac,6.04,11
+guards_in_return_expression,20,simple,77.69,8000
+guards_in_return_expression,30,expand_ac,6.30,11
+guards_in_return_expression,30,simple,251.68,27000
+guards_in_return_expression,40,expand_ac,6.00,16
+guards_in_return_expression,30,simple,248.82,27000
 guards_in_return_expression,40,expand_ac,6.05,16
-guards_in_return_expression,40,expand_ac,6.13,16
-guards_in_return_expression,40,expand_ac,6.01,16
-guards_in_return_expression,40,simple,588.82,64000
-guards_in_return_expression,40,simple,585.36,64000
-guards_in_return_expression,50,expand_ac,6.04,20
-guards_in_return_expression,40,simple,582.76,64000
+guards_in_return_expression,40,simple,586.56,64000
 guards_in_return_expression,50,expand_ac,6.15,20
-guards_in_return_expression,50,expand_ac,6.16,20
-guards_in_return_expression,50,simple,memory allocation of 187824 bytes failed
-Command terminated by signal 6
-1057.87,125000
-guards_in_return_expression,60,expand_ac,6.20,26
-guards_in_return_expression,50,simple,memory allocation of 312 bytes failed
-Command terminated by signal 6
-1061.64,125000
-guards_in_return_expression,50,simple,memory allocation of 187824 bytes failed
-Command terminated by signal 6
-1075.88,125000
+guards_in_return_expression,40,simple,584.59,64000
+guards_in_return_expression,50,expand_ac,6.38,20
+guards_in_return_expression,50,simple,1146.97,125000
+guards_in_return_expression,60,expand_ac,6.18,26
+guards_in_return_expression,50,simple,1145.48,125000
 guards_in_return_expression,60,expand_ac,6.14,26
-guards_in_return_expression,60,expand_ac,6.14,26
-guards_in_return_expression,60,simple,memory allocation of 216 bytes failed
+guards_in_return_expression,60,simple,memory allocation of 187824 bytes failed
 Command terminated by signal 6
-684.52,216000
-guards_in_return_expression,70,expand_ac,6.24,33
-guards_in_return_expression,60,simple,memory allocation of 208 bytes failed
+1734.17,216000
+guards_in_return_expression,60,simple,memory allocation of 3432 bytes failed
 Command terminated by signal 6
-682.00,216000
-guards_in_return_expression,70,expand_ac,6.24,33
-guards_in_return_expression,60,simple,memory allocation of 144 bytes failed
-Command terminated by signal 6
-682.65,216000
-guards_in_return_expression,70,expand_ac,6.16,33
-guards_in_return_expression,70,simple,memory allocation of 216 bytes failed
-Command terminated by signal 6
-927.49,343000
-guards_in_return_expression,80,expand_ac,6.26,39
-guards_in_return_expression,70,simple,memory allocation of 52 bytes failed
-Command terminated by signal 6
-924.90,343000
-guards_in_return_expression,80,expand_ac,6.29,39
+1747.71,216000
+guards_in_return_expression,70,expand_ac,6.25,33
+guards_in_return_expression,70,expand_ac,6.17,33
 guards_in_return_expression,70,simple,memory allocation of 144 bytes failed
 Command terminated by signal 6
-930.25,343000
-guards_in_return_expression,80,expand_ac,6.26,39
-guards_in_return_expression,90,expand_ac,6.34,47
-guards_in_return_expression,90,expand_ac,6.31,47
-guards_in_return_expression,90,expand_ac,6.56,47
-guards_in_return_expression,100,expand_ac,6.40,52
-guards_in_return_expression,100,expand_ac,6.42,52
-guards_in_return_expression,100,expand_ac,6.43,52
+1057.83,343000
+guards_in_return_expression,80,expand_ac,6.24,39
+guards_in_return_expression,70,simple,memory allocation of 216 bytes failed
+Command terminated by signal 6
+1058.29,343000
+guards_in_return_expression,80,expand_ac,6.41,39
+guards_in_return_expression,80,simple,memory allocation of 144 bytes failed
+Command terminated by signal 6
+1381.70,512000
+guards_in_return_expression,90,expand_ac,6.27,47
+guards_in_return_expression,80,simple,memory allocation of 144 bytes failed
+Command terminated by signal 6
+1390.87,512000
+guards_in_return_expression,90,expand_ac,6.35,47
+guards_in_return_expression,90,simple,memory allocation of 52 bytes failed
+Command terminated by signal 6
+1815.63,729000
+guards_in_return_expression,100,expand_ac,6.39,52
+guards_in_return_expression,90,simple,memory allocation of 144 bytes failed
+Command terminated by signal 6
+1856.08,729000
+guards_in_return_expression,100,expand_ac,6.36,52
+guards_in_return_expression,100,simple,memory allocation of 52 bytes failed
+Command terminated by signal 6
+2393.15,1000000
+guards_in_return_expression,100,simple,memory allocation of 144 bytes failed
+Command terminated by signal 6
+2386.36,1000000
