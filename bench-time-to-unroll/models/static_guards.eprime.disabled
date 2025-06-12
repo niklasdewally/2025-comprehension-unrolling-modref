@@ -8,12 +8,12 @@ find class : matrix indexed by [int(1..n)] of int(1..2)
  
 such that
 
-and([or([class[a] != class[b]
-     ,class[b] != class[c],
+and([or([class[a] != class[b],
+     class[b] != class[c],
      class[c] != class[a]]) 
    | a: int(1..n), 
      b:int(1..n), 
      c:int(1..n), 
      a<=b,
-     a<=c
+     a<=c,
      a** 2 + b **2 = c**2])
