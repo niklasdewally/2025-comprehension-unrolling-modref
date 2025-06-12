@@ -1,135 +1,70 @@
 model,n,bench,realtime_s,n_exprs_in_expansion
-guards_in_return_expression,50,expand_ac,6.05,20
-guards_in_return_expression,25,expand_ac,6.27,8
-guards_in_return_expression,75,expand_ac,6.22,37
-guards_in_return_expression,100,expand_ac,6.35,52
-guards_in_return_expression,25,simple,147.94,15625
-static_guards,25,expand_ac,Error:
-    output/models_with_params/static_guards-25.eprime:1:1:
-  |
-1 | language ESSENCE' 1.0
-  | ^^^^^^^^^^^^^^^^^^^^^
-Warning: Essence prime file detected, type checking is off
-
-output/models_with_params/static_guards-25.eprime:19:6:
-   |
-19 |      a** 2 + b **2 = c**2])
-   |      ^
-Missing ,
-
-
-Command exited with non-zero status 2
-0.06,
-static_guards,25,simple,Error:
-    output/models_with_params/static_guards-25.eprime:1:1:
-  |
-1 | language ESSENCE' 1.0
-  | ^^^^^^^^^^^^^^^^^^^^^
-Warning: Essence prime file detected, type checking is off
-
-output/models_with_params/static_guards-25.eprime:19:6:
-   |
-19 |      a** 2 + b **2 = c**2])
-   |      ^
-Missing ,
-
-
-Command exited with non-zero status 2
-0.06,
-static_guards,50,expand_ac,Error:
-    output/models_with_params/static_guards-50.eprime:1:1:
-  |
-1 | language ESSENCE' 1.0
-  | ^^^^^^^^^^^^^^^^^^^^^
-Warning: Essence prime file detected, type checking is off
-
-output/models_with_params/static_guards-50.eprime:19:6:
-   |
-19 |      a** 2 + b **2 = c**2])
-   |      ^
-Missing ,
-
-
-Command exited with non-zero status 2
-0.06,
-static_guards,50,simple,Error:
-    output/models_with_params/static_guards-50.eprime:1:1:
-  |
-1 | language ESSENCE' 1.0
-  | ^^^^^^^^^^^^^^^^^^^^^
-Warning: Essence prime file detected, type checking is off
-
-output/models_with_params/static_guards-50.eprime:19:6:
-   |
-19 |      a** 2 + b **2 = c**2])
-   |      ^
-Missing ,
-
-
-Command exited with non-zero status 2
-0.06,
-static_guards,75,expand_ac,Error:
-    output/models_with_params/static_guards-75.eprime:1:1:
-  |
-1 | language ESSENCE' 1.0
-  | ^^^^^^^^^^^^^^^^^^^^^
-Warning: Essence prime file detected, type checking is off
-
-output/models_with_params/static_guards-75.eprime:19:6:
-   |
-19 |      a** 2 + b **2 = c**2])
-   |      ^
-Missing ,
-
-
-Command exited with non-zero status 2
-0.06,
-static_guards,75,simple,Error:
-    output/models_with_params/static_guards-75.eprime:1:1:
-  |
-1 | language ESSENCE' 1.0
-  | ^^^^^^^^^^^^^^^^^^^^^
-Warning: Essence prime file detected, type checking is off
-
-output/models_with_params/static_guards-75.eprime:19:6:
-   |
-19 |      a** 2 + b **2 = c**2])
-   |      ^
-Missing ,
-
-
-Command exited with non-zero status 2
-0.06,
-static_guards,100,expand_ac,Error:
-    output/models_with_params/static_guards-100.eprime:1:1:
-  |
-1 | language ESSENCE' 1.0
-  | ^^^^^^^^^^^^^^^^^^^^^
-Warning: Essence prime file detected, type checking is off
-
-output/models_with_params/static_guards-100.eprime:19:6:
-   |
-19 |      a** 2 + b **2 = c**2])
-   |      ^
-Missing ,
-
-
-Command exited with non-zero status 2
-0.07,
-static_guards,100,simple,Error:
-    output/models_with_params/static_guards-100.eprime:1:1:
-  |
-1 | language ESSENCE' 1.0
-  | ^^^^^^^^^^^^^^^^^^^^^
-Warning: Essence prime file detected, type checking is off
-
-output/models_with_params/static_guards-100.eprime:19:6:
-   |
-19 |      a** 2 + b **2 = c**2])
-   |      ^
-Missing ,
-
-
-Command exited with non-zero status 2
-0.06,
-guards_in_return_expression,50,simple,1151.48,125000
+guards_in_return_expression,10,expand_ac,5.92,2
+guards_in_return_expression,10,expand_ac,6.30,2
+guards_in_return_expression,10,expand_ac,6.10,2
+guards_in_return_expression,10,simple,14.64,1000
+guards_in_return_expression,20,expand_ac,5.94,6
+guards_in_return_expression,10,simple,14.70,1000
+guards_in_return_expression,20,expand_ac,5.93,6
+guards_in_return_expression,10,simple,14.69,1000
+guards_in_return_expression,20,expand_ac,6.03,6
+guards_in_return_expression,20,simple,77.13,8000
+guards_in_return_expression,30,expand_ac,6.08,11
+guards_in_return_expression,20,simple,78.08,8000
+guards_in_return_expression,30,expand_ac,5.99,11
+guards_in_return_expression,20,simple,77.25,8000
+guards_in_return_expression,30,expand_ac,6.00,11
+guards_in_return_expression,30,simple,247.74,27000
+guards_in_return_expression,30,simple,249.04,27000
+guards_in_return_expression,30,simple,250.63,27000
+guards_in_return_expression,40,expand_ac,6.05,16
+guards_in_return_expression,40,expand_ac,6.13,16
+guards_in_return_expression,40,expand_ac,6.01,16
+guards_in_return_expression,40,simple,588.82,64000
+guards_in_return_expression,40,simple,585.36,64000
+guards_in_return_expression,50,expand_ac,6.04,20
+guards_in_return_expression,40,simple,582.76,64000
+guards_in_return_expression,50,expand_ac,6.15,20
+guards_in_return_expression,50,expand_ac,6.16,20
+guards_in_return_expression,50,simple,memory allocation of 187824 bytes failed
+Command terminated by signal 6
+1057.87,125000
+guards_in_return_expression,60,expand_ac,6.20,26
+guards_in_return_expression,50,simple,memory allocation of 312 bytes failed
+Command terminated by signal 6
+1061.64,125000
+guards_in_return_expression,50,simple,memory allocation of 187824 bytes failed
+Command terminated by signal 6
+1075.88,125000
+guards_in_return_expression,60,expand_ac,6.14,26
+guards_in_return_expression,60,expand_ac,6.14,26
+guards_in_return_expression,60,simple,memory allocation of 216 bytes failed
+Command terminated by signal 6
+684.52,216000
+guards_in_return_expression,70,expand_ac,6.24,33
+guards_in_return_expression,60,simple,memory allocation of 208 bytes failed
+Command terminated by signal 6
+682.00,216000
+guards_in_return_expression,70,expand_ac,6.24,33
+guards_in_return_expression,60,simple,memory allocation of 144 bytes failed
+Command terminated by signal 6
+682.65,216000
+guards_in_return_expression,70,expand_ac,6.16,33
+guards_in_return_expression,70,simple,memory allocation of 216 bytes failed
+Command terminated by signal 6
+927.49,343000
+guards_in_return_expression,80,expand_ac,6.26,39
+guards_in_return_expression,70,simple,memory allocation of 52 bytes failed
+Command terminated by signal 6
+924.90,343000
+guards_in_return_expression,80,expand_ac,6.29,39
+guards_in_return_expression,70,simple,memory allocation of 144 bytes failed
+Command terminated by signal 6
+930.25,343000
+guards_in_return_expression,80,expand_ac,6.26,39
+guards_in_return_expression,90,expand_ac,6.34,47
+guards_in_return_expression,90,expand_ac,6.31,47
+guards_in_return_expression,90,expand_ac,6.56,47
+guards_in_return_expression,100,expand_ac,6.40,52
+guards_in_return_expression,100,expand_ac,6.42,52
+guards_in_return_expression,100,expand_ac,6.43,52
