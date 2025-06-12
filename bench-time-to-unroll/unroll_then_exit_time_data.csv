@@ -2,60 +2,20 @@ model,n,bench,realtime_s,n_exprs_in_expansion
 guards_in_return_expression,10,expand_ac,5.88,2
 guards_in_return_expression,10,expand_ac,6.04,2
 guards_in_return_expression,10,simple,14.72,1000
-guards_in_return_expression,20,expand_ac,5.92,6
 guards_in_return_expression,10,simple,14.60,1000
+guards_in_return_expression,20,expand_ac,5.92,6
 guards_in_return_expression,20,expand_ac,6.00,6
 guards_in_return_expression,20,simple,77.41,8000
-guards_in_return_expression,30,expand_ac,6.04,11
 guards_in_return_expression,20,simple,77.69,8000
+guards_in_return_expression,30,expand_ac,6.04,11
 guards_in_return_expression,30,expand_ac,6.30,11
 guards_in_return_expression,30,simple,251.68,27000
-guards_in_return_expression,40,expand_ac,6.00,16
 guards_in_return_expression,30,simple,248.82,27000
+guards_in_return_expression,40,expand_ac,6.00,16
 guards_in_return_expression,40,expand_ac,6.05,16
 guards_in_return_expression,40,simple,586.56,64000
-guards_in_return_expression,50,expand_ac,6.15,20
 guards_in_return_expression,40,simple,584.59,64000
+guards_in_return_expression,50,expand_ac,6.15,20
 guards_in_return_expression,50,expand_ac,6.38,20
 guards_in_return_expression,50,simple,1146.97,125000
-guards_in_return_expression,60,expand_ac,6.18,26
 guards_in_return_expression,50,simple,1145.48,125000
-guards_in_return_expression,60,expand_ac,6.14,26
-guards_in_return_expression,60,simple,memory allocation of 187824 bytes failed
-Command terminated by signal 6
-1734.17,216000
-guards_in_return_expression,60,simple,memory allocation of 3432 bytes failed
-Command terminated by signal 6
-1747.71,216000
-guards_in_return_expression,70,expand_ac,6.25,33
-guards_in_return_expression,70,expand_ac,6.17,33
-guards_in_return_expression,70,simple,memory allocation of 144 bytes failed
-Command terminated by signal 6
-1057.83,343000
-guards_in_return_expression,80,expand_ac,6.24,39
-guards_in_return_expression,70,simple,memory allocation of 216 bytes failed
-Command terminated by signal 6
-1058.29,343000
-guards_in_return_expression,80,expand_ac,6.41,39
-guards_in_return_expression,80,simple,memory allocation of 144 bytes failed
-Command terminated by signal 6
-1381.70,512000
-guards_in_return_expression,90,expand_ac,6.27,47
-guards_in_return_expression,80,simple,memory allocation of 144 bytes failed
-Command terminated by signal 6
-1390.87,512000
-guards_in_return_expression,90,expand_ac,6.35,47
-guards_in_return_expression,90,simple,memory allocation of 52 bytes failed
-Command terminated by signal 6
-1815.63,729000
-guards_in_return_expression,100,expand_ac,6.39,52
-guards_in_return_expression,90,simple,memory allocation of 144 bytes failed
-Command terminated by signal 6
-1856.08,729000
-guards_in_return_expression,100,expand_ac,6.36,52
-guards_in_return_expression,100,simple,memory allocation of 52 bytes failed
-Command terminated by signal 6
-2393.15,1000000
-guards_in_return_expression,100,simple,memory allocation of 144 bytes failed
-Command terminated by signal 6
-2386.36,1000000
