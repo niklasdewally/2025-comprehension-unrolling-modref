@@ -1,0 +1,135 @@
+model,n,bench,realtime_s,n_exprs_in_expansion
+guards_in_return_expression,50,expand_ac,6.05,20
+guards_in_return_expression,25,expand_ac,6.27,8
+guards_in_return_expression,75,expand_ac,6.22,37
+guards_in_return_expression,100,expand_ac,6.35,52
+guards_in_return_expression,25,simple,147.94,15625
+static_guards,25,expand_ac,Error:
+    output/models_with_params/static_guards-25.eprime:1:1:
+  |
+1 | language ESSENCE' 1.0
+  | ^^^^^^^^^^^^^^^^^^^^^
+Warning: Essence prime file detected, type checking is off
+
+output/models_with_params/static_guards-25.eprime:19:6:
+   |
+19 |      a** 2 + b **2 = c**2])
+   |      ^
+Missing ,
+
+
+Command exited with non-zero status 2
+0.06,
+static_guards,25,simple,Error:
+    output/models_with_params/static_guards-25.eprime:1:1:
+  |
+1 | language ESSENCE' 1.0
+  | ^^^^^^^^^^^^^^^^^^^^^
+Warning: Essence prime file detected, type checking is off
+
+output/models_with_params/static_guards-25.eprime:19:6:
+   |
+19 |      a** 2 + b **2 = c**2])
+   |      ^
+Missing ,
+
+
+Command exited with non-zero status 2
+0.06,
+static_guards,50,expand_ac,Error:
+    output/models_with_params/static_guards-50.eprime:1:1:
+  |
+1 | language ESSENCE' 1.0
+  | ^^^^^^^^^^^^^^^^^^^^^
+Warning: Essence prime file detected, type checking is off
+
+output/models_with_params/static_guards-50.eprime:19:6:
+   |
+19 |      a** 2 + b **2 = c**2])
+   |      ^
+Missing ,
+
+
+Command exited with non-zero status 2
+0.06,
+static_guards,50,simple,Error:
+    output/models_with_params/static_guards-50.eprime:1:1:
+  |
+1 | language ESSENCE' 1.0
+  | ^^^^^^^^^^^^^^^^^^^^^
+Warning: Essence prime file detected, type checking is off
+
+output/models_with_params/static_guards-50.eprime:19:6:
+   |
+19 |      a** 2 + b **2 = c**2])
+   |      ^
+Missing ,
+
+
+Command exited with non-zero status 2
+0.06,
+static_guards,75,expand_ac,Error:
+    output/models_with_params/static_guards-75.eprime:1:1:
+  |
+1 | language ESSENCE' 1.0
+  | ^^^^^^^^^^^^^^^^^^^^^
+Warning: Essence prime file detected, type checking is off
+
+output/models_with_params/static_guards-75.eprime:19:6:
+   |
+19 |      a** 2 + b **2 = c**2])
+   |      ^
+Missing ,
+
+
+Command exited with non-zero status 2
+0.06,
+static_guards,75,simple,Error:
+    output/models_with_params/static_guards-75.eprime:1:1:
+  |
+1 | language ESSENCE' 1.0
+  | ^^^^^^^^^^^^^^^^^^^^^
+Warning: Essence prime file detected, type checking is off
+
+output/models_with_params/static_guards-75.eprime:19:6:
+   |
+19 |      a** 2 + b **2 = c**2])
+   |      ^
+Missing ,
+
+
+Command exited with non-zero status 2
+0.06,
+static_guards,100,expand_ac,Error:
+    output/models_with_params/static_guards-100.eprime:1:1:
+  |
+1 | language ESSENCE' 1.0
+  | ^^^^^^^^^^^^^^^^^^^^^
+Warning: Essence prime file detected, type checking is off
+
+output/models_with_params/static_guards-100.eprime:19:6:
+   |
+19 |      a** 2 + b **2 = c**2])
+   |      ^
+Missing ,
+
+
+Command exited with non-zero status 2
+0.07,
+static_guards,100,simple,Error:
+    output/models_with_params/static_guards-100.eprime:1:1:
+  |
+1 | language ESSENCE' 1.0
+  | ^^^^^^^^^^^^^^^^^^^^^
+Warning: Essence prime file detected, type checking is off
+
+output/models_with_params/static_guards-100.eprime:19:6:
+   |
+19 |      a** 2 + b **2 = c**2])
+   |      ^
+Missing ,
+
+
+Command exited with non-zero status 2
+0.06,
+guards_in_return_expression,50,simple,1151.48,125000
