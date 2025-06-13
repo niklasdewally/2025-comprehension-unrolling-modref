@@ -1,0 +1,20 @@
+given n : int
+given number_of_clusters : int
+
+given x : matrix [int(1..n)] of int
+given y : matrix [int(1..n)] of int
+
+find colour : matrix [int(1..n), int(1..n)] of int(0..number_of_clusters)
+
+$ Edge colours must be symmetric and diagonal must be zero
+such that
+    forAll i, j : int(1..n) .
+        colour[i,j] = colour[j,i] /\
+        (i = j -> colour[i,j] = 0),
+
+$ Colinear sequences must not reuse the same colour on adjacent edges
+    forAll i, j, k : int(1..n) .
+        i != j /\ j != k /\ i != k /\
+        ( (x[j] - x[i]) * (y[k] - y[i]) = (x[k] - x[i]) * (y[j] - y[i]) ) ->
+            !(colour[i,j] != 0 /\ colour[j,k] != 0 /\ colour[i,j] = colour[j,k])
+
