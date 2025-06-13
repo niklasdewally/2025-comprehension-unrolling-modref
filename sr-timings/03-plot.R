@@ -2,7 +2,7 @@
 library(readr)
 library(dplyr)
 library(ggplot2)
-library(tikzDevice)
+# library(tikzDevice)
 
 df <- read_table("times.dat")
 
