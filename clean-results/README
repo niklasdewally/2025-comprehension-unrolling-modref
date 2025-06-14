@@ -1,0 +1,12 @@
+Collated and organised results from the various experiments.
+
+Expect the following files in raw_data:
+
+```
+savilerow_rewrite_times.dat -- from sr-timings/
+minizinc_rewrite_times.dat -- from minizinc/
+triples_time_to_unroll.csv -- from bench-time-to-unroll/
+colours_time_to_unroll.dat -- from bench-unroll-colour/
+```
+
+
