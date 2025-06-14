@@ -1,180 +1,181 @@
-0.122 dynamic_guards 10
-0.116 dynamic_guards 10
-0.118 dynamic_guards 10
-1.049 dynamic_guards 100
-1.069 dynamic_guards 100
-1.077 dynamic_guards 100
-1.378 dynamic_guards 110
-1.463 dynamic_guards 110
-1.459 dynamic_guards 110
-1.759 dynamic_guards 120
-1.786 dynamic_guards 120
-1.809 dynamic_guards 120
-2.222 dynamic_guards 130
-2.261 dynamic_guards 130
-2.260 dynamic_guards 130
-2.779 dynamic_guards 140
-2.776 dynamic_guards 140
-2.716 dynamic_guards 140
-3.430 dynamic_guards 150
-3.434 dynamic_guards 150
-3.326 dynamic_guards 150
-3.963 dynamic_guards 160
-4.018 dynamic_guards 160
-4.013 dynamic_guards 160
-4.825 dynamic_guards 170
-5.023 dynamic_guards 170
-5.069 dynamic_guards 170
-5.672 dynamic_guards 180
-5.694 dynamic_guards 180
-5.728 dynamic_guards 180
-0.118 dynamic_guards 20
-0.109 dynamic_guards 20
-0.111 dynamic_guards 20
-6.641 dynamic_guards 190
-6.588 dynamic_guards 190
-6.591 dynamic_guards 190
-0.134 dynamic_guards 30
-0.130 dynamic_guards 30
-0.138 dynamic_guards 30
-0.173 dynamic_guards 40
-0.161 dynamic_guards 40
-0.162 dynamic_guards 40
-0.217 dynamic_guards 50
-0.220 dynamic_guards 50
-0.215 dynamic_guards 50
-0.303 dynamic_guards 60
-0.315 dynamic_guards 60
-0.307 dynamic_guards 60
-7.925 dynamic_guards 200
-0.437 dynamic_guards 70
-0.455 dynamic_guards 70
-0.440 dynamic_guards 70
-0.620 dynamic_guards 80
-0.622 dynamic_guards 80
-7.919 dynamic_guards 200
-0.613 dynamic_guards 80
-0.823 dynamic_guards 90
-0.109 if 10
-0.105 if 10
-0.101 if 10
-0.838 dynamic_guards 90
-0.835 dynamic_guards 90
-7.621 dynamic_guards 200
-2.072 if 100
-2.003 if 100
-2.067 if 100
-2.776 if 110
-2.661 if 110
-2.819 if 110
-3.398 if 120
-3.491 if 120
-3.457 if 120
-4.342 if 130
-4.527 if 130
-4.531 if 130
-5.364 if 140
-5.361 if 140
-5.373 if 140
-6.583 if 150
-6.676 if 150
-6.661 if 150
-8.049 if 160
-8.026 if 160
-8.399 if 160
-10.005 if 170
-9.716 if 170
-9.590 if 170
-11.347 if 180
-11.286 if 180
-11.317 if 180
-0.128 if 20
-0.118 if 20
-0.121 if 20
-13.204 if 190
-13.872 if 190
-13.268 if 190
-0.168 if 30
-0.165 if 30
-0.163 if 30
-0.228 if 40
-0.228 if 40
-0.233 if 40
-0.341 if 50
-0.345 if 50
-0.347 if 50
-0.520 if 60
-0.524 if 60
-0.523 if 60
-15.386 if 200
-0.769 if 70
-0.802 if 70
-0.807 if 70
-1.115 if 80
-1.114 if 80
-1.155 if 80
-1.507 if 90
-15.350 if 200
-0.105 static_guards 10
-0.098 static_guards 10
-0.099 static_guards 10
-1.575 if 90
-0.266 static_guards 100
-0.269 static_guards 100
-0.263 static_guards 100
-1.588 if 90
-0.325 static_guards 110
-0.319 static_guards 110
-0.309 static_guards 110
-0.374 static_guards 120
-0.365 static_guards 120
-0.362 static_guards 120
-0.460 static_guards 130
-0.420 static_guards 130
-0.465 static_guards 130
-0.531 static_guards 140
-0.503 static_guards 140
-0.513 static_guards 140
-0.625 static_guards 150
-0.598 static_guards 150
-0.641 static_guards 150
-0.739 static_guards 160
-0.689 static_guards 160
-0.731 static_guards 160
-0.842 static_guards 170
-15.346 if 200
-0.840 static_guards 170
-0.816 static_guards 170
-1.009 static_guards 180
-1.015 static_guards 180
-0.944 static_guards 180
-0.099 static_guards 20
-1.079 static_guards 190
-0.102 static_guards 20
-0.099 static_guards 20
-1.128 static_guards 190
-1.125 static_guards 190
-0.122 static_guards 30
-0.114 static_guards 30
-1.242 static_guards 200
-0.122 static_guards 30
-1.260 static_guards 200
-0.115 static_guards 40
-0.130 static_guards 40
-0.115 static_guards 40
-0.143 static_guards 50
-0.140 static_guards 50
-0.130 static_guards 50
-0.155 static_guards 60
-0.146 static_guards 60
-0.138 static_guards 60
-0.175 static_guards 70
-0.166 static_guards 70
-0.164 static_guards 70
-0.199 static_guards 80
-0.196 static_guards 80
-0.192 static_guards 80
-1.338 static_guards 200
-0.212 static_guards 90
-0.226 static_guards 90
-0.225 static_guards 90
+time_s exit_code model n
+     0.122	0	dynamic_guards 10
+     0.116	0	dynamic_guards 10
+     0.118	0	dynamic_guards 10
+     1.049	0	dynamic_guards 100
+     1.077	0	dynamic_guards 100
+     1.069	0	dynamic_guards 100
+     1.378	0	dynamic_guards 110
+     1.463	0	dynamic_guards 110
+     1.459	0	dynamic_guards 110
+     1.759	0	dynamic_guards 120
+     1.786	0	dynamic_guards 120
+     1.809	0	dynamic_guards 120
+     2.222	0	dynamic_guards 130
+     2.261	0	dynamic_guards 130
+     2.260	0	dynamic_guards 130
+     2.779	0	dynamic_guards 140
+     2.776	0	dynamic_guards 140
+     2.716	0	dynamic_guards 140
+     3.430	0	dynamic_guards 150
+     3.434	0	dynamic_guards 150
+     3.326	0	dynamic_guards 150
+     3.963	0	dynamic_guards 160
+     4.018	0	dynamic_guards 160
+     4.013	0	dynamic_guards 160
+     4.825	0	dynamic_guards 170
+     5.023	0	dynamic_guards 170
+     5.069	0	dynamic_guards 170
+     5.672	0	dynamic_guards 180
+     5.694	0	dynamic_guards 180
+     5.728	0	dynamic_guards 180
+     6.641	0	dynamic_guards 190
+     6.588	0	dynamic_guards 190
+     6.591	0	dynamic_guards 190
+     0.118	0	dynamic_guards 20
+     0.109	0	dynamic_guards 20
+     0.111	0	dynamic_guards 20
+     7.925	0	dynamic_guards 200
+     7.919	0	dynamic_guards 200
+     7.621	0	dynamic_guards 200
+     0.134	0	dynamic_guards 30
+     0.130	0	dynamic_guards 30
+     0.138	0	dynamic_guards 30
+     0.173	0	dynamic_guards 40
+     0.161	0	dynamic_guards 40
+     0.162	0	dynamic_guards 40
+     0.217	0	dynamic_guards 50
+     0.220	0	dynamic_guards 50
+     0.215	0	dynamic_guards 50
+     0.303	0	dynamic_guards 60
+     0.315	0	dynamic_guards 60
+     0.307	0	dynamic_guards 60
+     0.437	0	dynamic_guards 70
+     0.455	0	dynamic_guards 70
+     0.440	0	dynamic_guards 70
+     0.620	0	dynamic_guards 80
+     0.622	0	dynamic_guards 80
+     0.613	0	dynamic_guards 80
+     0.823	0	dynamic_guards 90
+     0.838	0	dynamic_guards 90
+     0.835	0	dynamic_guards 90
+     0.109	0	if 10
+     0.105	0	if 10
+     0.101	0	if 10
+     2.072	0	if 100
+     2.067	0	if 100
+     2.003	0	if 100
+     2.776	0	if 110
+     2.819	0	if 110
+     2.661	0	if 110
+     3.398	0	if 120
+     3.491	0	if 120
+     3.457	0	if 120
+     4.342	0	if 130
+     4.527	0	if 130
+     4.531	0	if 130
+     5.364	0	if 140
+     5.361	0	if 140
+     5.373	0	if 140
+     6.583	0	if 150
+     6.676	0	if 150
+     6.661	0	if 150
+     8.049	0	if 160
+     8.026	0	if 160
+     8.399	0	if 160
+    10.005	0	if 170
+     9.716	0	if 170
+     9.590	0	if 170
+    11.347	0	if 180
+    11.286	0	if 180
+    11.317	0	if 180
+    13.204	0	if 190
+    13.872	0	if 190
+    13.268	0	if 190
+     0.128	0	if 20
+     0.118	0	if 20
+     0.121	0	if 20
+    15.386	0	if 200
+    15.350	0	if 200
+    15.346	0	if 200
+     0.168	0	if 30
+     0.165	0	if 30
+     0.163	0	if 30
+     0.228	0	if 40
+     0.228	0	if 40
+     0.233	0	if 40
+     0.341	0	if 50
+     0.345	0	if 50
+     0.347	0	if 50
+     0.520	0	if 60
+     0.524	0	if 60
+     0.523	0	if 60
+     0.769	0	if 70
+     0.802	0	if 70
+     0.807	0	if 70
+     1.115	0	if 80
+     1.114	0	if 80
+     1.155	0	if 80
+     1.507	0	if 90
+     1.575	0	if 90
+     1.588	0	if 90
+     0.105	0	static_guards 10
+     0.098	0	static_guards 10
+     0.099	0	static_guards 10
+     0.266	0	static_guards 100
+     0.269	0	static_guards 100
+     0.263	0	static_guards 100
+     0.325	0	static_guards 110
+     0.319	0	static_guards 110
+     0.309	0	static_guards 110
+     0.374	0	static_guards 120
+     0.365	0	static_guards 120
+     0.362	0	static_guards 120
+     0.460	0	static_guards 130
+     0.465	0	static_guards 130
+     0.420	0	static_guards 130
+     0.531	0	static_guards 140
+     0.503	0	static_guards 140
+     0.513	0	static_guards 140
+     0.625	0	static_guards 150
+     0.641	0	static_guards 150
+     0.598	0	static_guards 150
+     0.739	0	static_guards 160
+     0.689	0	static_guards 160
+     0.731	0	static_guards 160
+     0.842	0	static_guards 170
+     0.840	0	static_guards 170
+     0.816	0	static_guards 170
+     1.009	0	static_guards 180
+     1.015	0	static_guards 180
+     0.944	0	static_guards 180
+     1.079	0	static_guards 190
+     1.128	0	static_guards 190
+     1.125	0	static_guards 190
+     0.099	0	static_guards 20
+     0.102	0	static_guards 20
+     0.099	0	static_guards 20
+     1.242	0	static_guards 200
+     1.260	0	static_guards 200
+     1.338	0	static_guards 200
+     0.122	0	static_guards 30
+     0.114	0	static_guards 30
+     0.122	0	static_guards 30
+     0.115	0	static_guards 40
+     0.130	0	static_guards 40
+     0.115	0	static_guards 40
+     0.143	0	static_guards 50
+     0.140	0	static_guards 50
+     0.130	0	static_guards 50
+     0.155	0	static_guards 60
+     0.146	0	static_guards 60
+     0.138	0	static_guards 60
+     0.175	0	static_guards 70
+     0.166	0	static_guards 70
+     0.164	0	static_guards 70
+     0.199	0	static_guards 80
+     0.196	0	static_guards 80
+     0.192	0	static_guards 80
+     0.226	0	static_guards 90
+     0.225	0	static_guards 90
+     0.212	0	static_guards 90
