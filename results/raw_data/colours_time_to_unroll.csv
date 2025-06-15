@@ -17,19 +17,8 @@ colours1,25,expand_ac,666.29,625
 colours2,20,expand_ac,2159.59,6840
 colours2,20,simple,2297.37,8000
 colours1,25,simple,665.45,625
-colours1,30,expand_ac,conjure: output/models_with_params/colours1-30.eprime: withBinaryFile: does not exist (No such file or directory)
-
-Command exited with non-zero status 2
-0.06,
-colours2,30,expand_ac,conjure: output/models_with_params/colours2-30.eprime: withBinaryFile: does not exist (No such file or directory)
-
-Command exited with non-zero status 2
-0.04,
-colours1,30,simple,conjure: output/models_with_params/colours1-30.eprime: withBinaryFile: does not exist (No such file or directory)
-
-Command exited with non-zero status 2
-0.05,
-colours2,30,simple,conjure: output/models_with_params/colours2-30.eprime: withBinaryFile: does not exist (No such file or directory)
-
-Command exited with non-zero status 2
-0.05,
+colours1,30,expand_ac,1345.55,900
+colours2,25,expand_ac,5473.16,13800
+colours1,30,simple,1344.33,900
+colours1,35,expand_ac,2415.90,1225
+colours1,35,simple,2426.46,1225

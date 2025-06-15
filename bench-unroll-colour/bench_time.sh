@@ -23,7 +23,7 @@ err() {
 
 n_cores=${BENCH_N_CORES:-3}
 repeats=${BENCH_REPEATS:-1}
-ns=${BENCH_N_VALUES:-"5 10 15 20 25 30"}
+ns=${BENCH_N_VALUES:-"5 10 15 20 25 30 35"}
 # max_mem_gb=${BENCH_MAX_MEM_GB:-50}
 unroll_then_exit_data_path=$(realpath -m "output/unroll_then_exit_time_data.csv")
 time_data_path=$(realpath -m "output/time_data.csv")
