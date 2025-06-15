@@ -1,0 +1,26 @@
+$ original return expression:
+$ forAll i, j, k : int(1..n) .
+$     i != j /\ j != k /\ i != k /\
+$     ( (x[j] - x[i]) * (y[k] - y[i]) = (x[k] - x[i]) * (y[j] - y[i]) ) ->
+$         !(colour[i,j] != 0 /\ colour[j,k] != 0 /\ colour[i,j] = colour[j,k])
+
+$ for n=10
+
+
+find i: int(1..10)
+find j: int(1..10)
+find k: int(1..10)
+find __0: bool
+find __1: bool
+find __2: bool
+find __3: bool
+find __4: bool
+find __5: bool
+find __6: bool
+
+such that
+
+(true != __4),
+Reify(ReifyImply(WatchedLiteral(__6,false), __5), __4),
+Reify(and([(i != j),(j != k),(i != k),__0;int(1..)]), __5),
+Reify(and([__1,__2,__3;int(1..)]), __6)
