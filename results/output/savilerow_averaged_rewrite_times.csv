@@ -1,0 +1,57 @@
+Model,n,Mean Rewrite Time (s)
+"Comprehension, with guards",10,0.24333333333333332
+"Comprehension, with guards",20,0.286
+"Comprehension, with guards",30,0.33066666666666666
+"Comprehension, with guards",40,0.4036666666666667
+"Comprehension, with guards",50,0.5173333333333333
+"Comprehension, with guards",60,0.661
+"Comprehension, with guards",70,0.88
+"Comprehension, with guards",80,1.1676666666666666
+"Comprehension, with guards",90,1.559
+"Comprehension, with guards",100,1.9493333333333334
+"Comprehension, with guards",110,2.515
+"Comprehension, with guards",120,3.0616666666666665
+"Comprehension, with guards",130,3.663
+"Comprehension, with guards",140,4.4303333333333335
+"Comprehension, with guards",150,5.337
+"Comprehension, with guards",160,6.163
+"Comprehension, with guards",170,7.4816666666666665
+"Comprehension, with guards",180,8.542333333333334
+"Comprehension, with guards",190,9.758666666666667
+"Comprehension, with guards",200,11.514000000000001
+Forall,10,0.23866666666666667
+Forall,20,0.29233333333333333
+Forall,30,0.369
+Forall,40,0.6036666666666667
+Forall,50,1.1643333333333332
+Forall,60,1.6546666666666667
+Forall,70,2.1926666666666668
+Forall,80,3.605
+Forall,90,5.065
+Forall,100,5.846
+Forall,110,1.9616666666666667
+Forall,120,2.4856666666666665
+Forall,130,3.0386666666666664
+Forall,140,3.7426666666666666
+Forall,150,4.574
+Forall,160,5.3693333333333335
+Forall,170,6.206666666666667
+Forall,180,7.197666666666667
+Forall,190,8.334333333333333
+Forall,200,9.474
+"Comprehension, no guards",10,0.257
+"Comprehension, no guards",20,0.37466666666666665
+"Comprehension, no guards",30,0.8263333333333334
+"Comprehension, no guards",40,1.7253333333333334
+"Comprehension, no guards",50,3.626
+"Comprehension, no guards",60,8.837666666666667
+"Comprehension, no guards",70,21.368666666666666
+"Comprehension, no guards",80,46.957
+"Comprehension, no guards",90,92.32433333333333
+"Comprehension, no guards",100,162.42566666666667
+"Comprehension, no guards",110,309.29633333333334
+"Comprehension, no guards",120,489.44033333333334
+"Comprehension, no guards",130,781.618
+"Comprehension, no guards",140,1299.5346666666667
+"Comprehension, no guards",150,2054.2273333333333
+"Comprehension, no guards",160,3127.0783333333334

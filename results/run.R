@@ -108,8 +108,8 @@ plot_triple_unrolling_time <- function() {
     mutate(`relative_n_exprs_in_expansion` = `n_exprs_in_expansion` / min(`n_exprs_in_expansion`)) %>%
     mutate(`model` = case_when(
       `model` == "guards_in_return_expression" ~ "Triples, no comprehension guards",
-      `model` == "colours1" ~ "colours 1...?", 
-      `model` == "colours2" ~ "colours 2...?", 
+      `model` == "colours1" ~ "Triangle Colouring #1",
+      `model` == "colours2" ~ "Triangle Colouring #2", 
       .default = `model`))
 
   # plot small multiple plots  
@@ -169,6 +169,57 @@ plot_triple_unrolling_time <- function() {
 
   ggsave("output/expressions_unrolled_log.pdf",expressions_unrolled_log)
 
+  # plots for only triples
+  tikz(file = "output/triples_expressions_unrolled.tikz", width = 5, height = 5, sanitize=TRUE)
+  expressions_unrolled <- ggplot(dfClean %>% filter(`model` == "Triples, no comprehension guards")) +
+    ggplotTheme + 
+    aes(x=`n`,y=`relative_n_exprs_in_expansion`, group = `bench`, colour=`bench`, shape=`bench`) + 
+    geom_line() +
+    geom_point(size=1) + 
+    scale_x_continuous(breaks=scales::breaks_width(20)) +
+    xlab("n") + 
+    ylab("Expressions in expansion (relative to smallest)") + 
+    labs(colour= "Expansion method",shape="Expansion method")
+
+  print(expressions_unrolled)
+  dev.off()
+  ggsave("output/triples_expressions_unrolled.pdf",expressions_unrolled)
+
+  tikz(file = "output/triples_expressions_unrolled_log.tikz", width = 5, height = 5, sanitize=TRUE)
+  expressions_unrolled_log <- expressions_unrolled + 
+    scale_y_log10(labels = label_log()) + 
+    ylab("Expressions in expansion (relative to smallest)")
+
+  print(expressions_unrolled_log)
+  dev.off()
+
+  ggsave("output/triples_expressions_unrolled_log.pdf",expressions_unrolled_log)
+
+  tikz(file = "output/triples_time_to_unroll.tikz", width = 5, height = 5, sanitize = TRUE )
+  time_to_unroll <- ggplot(dfClean %>% filter(`model` == "Triples, no comprehension guards")) + 
+    ggplotTheme + 
+    aes(x=`n`,y=`relative_realtime_s`, group = `bench`, colour=`bench`, shape=`bench`) + 
+    geom_line() +
+    geom_point(size=1) + 
+    scale_x_continuous(breaks=scales::breaks_width(20)) +
+    xlab("n") + 
+    ylab("Time to unroll (s, relative to fastest)") +
+    labs(colour= "Expansion method",shape="Expansion method")
+
+  print(time_to_unroll)
+  dev.off()
+
+  ggsave("output/triples_time_to_unroll.pdf",time_to_unroll)
+
+  tikz(file = "output/triples_time_to_unroll_log.tikz", width = 5, height = 5, sanitize = TRUE )
+  time_to_unroll_log <- time_to_unroll + 
+    scale_y_log10(labels = label_log()) + 
+    ylab("Time to unroll (s, relative to fastest)")
+
+  print(time_to_unroll_log)
+  dev.off()
+
+  ggsave("output/triples_time_to_unroll_log.pdf",time_to_unroll_log)
 }
 
 

@@ -1,0 +1,61 @@
+Model,n,Mean Rewrite Time (s)
+"Comprehension, no guards",10,0.11866666666666667
+"Comprehension, no guards",20,0.11266666666666666
+"Comprehension, no guards",30,0.134
+"Comprehension, no guards",40,0.16533333333333333
+"Comprehension, no guards",50,0.21733333333333332
+"Comprehension, no guards",60,0.30833333333333335
+"Comprehension, no guards",70,0.444
+"Comprehension, no guards",80,0.6183333333333333
+"Comprehension, no guards",90,0.832
+"Comprehension, no guards",100,1.065
+"Comprehension, no guards",110,1.4333333333333333
+"Comprehension, no guards",120,1.7846666666666666
+"Comprehension, no guards",130,2.2476666666666665
+"Comprehension, no guards",140,2.757
+"Comprehension, no guards",150,3.396666666666667
+"Comprehension, no guards",160,3.9979999999999998
+"Comprehension, no guards",170,4.972333333333333
+"Comprehension, no guards",180,5.6979999999999995
+"Comprehension, no guards",190,6.6066666666666665
+"Comprehension, no guards",200,7.821666666666666
+If,10,0.105
+If,20,0.12233333333333334
+If,30,0.16533333333333333
+If,40,0.22966666666666669
+If,50,0.3443333333333333
+If,60,0.5223333333333333
+If,70,0.7926666666666667
+If,80,1.1280000000000001
+If,90,1.5566666666666666
+If,100,2.0473333333333334
+If,110,2.752
+If,120,3.4486666666666665
+If,130,4.466666666666667
+If,140,5.366
+If,150,6.64
+If,160,8.158
+If,170,9.770333333333333
+If,180,11.316666666666666
+If,190,13.448
+If,200,15.360666666666667
+"Comprehension, with guards",10,0.10066666666666667
+"Comprehension, with guards",20,0.1
+"Comprehension, with guards",30,0.11933333333333333
+"Comprehension, with guards",40,0.12000000000000001
+"Comprehension, with guards",50,0.13766666666666666
+"Comprehension, with guards",60,0.14633333333333334
+"Comprehension, with guards",70,0.16833333333333333
+"Comprehension, with guards",80,0.19566666666666668
+"Comprehension, with guards",90,0.221
+"Comprehension, with guards",100,0.266
+"Comprehension, with guards",110,0.31766666666666665
+"Comprehension, with guards",120,0.367
+"Comprehension, with guards",130,0.44833333333333336
+"Comprehension, with guards",140,0.5156666666666667
+"Comprehension, with guards",150,0.6213333333333333
+"Comprehension, with guards",160,0.7196666666666667
+"Comprehension, with guards",170,0.8326666666666667
+"Comprehension, with guards",180,0.9893333333333333
+"Comprehension, with guards",190,1.1106666666666667
+"Comprehension, with guards",200,1.28
