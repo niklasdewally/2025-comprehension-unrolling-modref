@@ -1,3 +1,6 @@
 *.log
 *.json
 **/output/*
+sr-timings/*.param*
+*.dzn
+*.ozn

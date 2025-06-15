@@ -23,7 +23,7 @@ err() {
 
 n_cores=${BENCH_N_CORES:-3}
 repeats=${BENCH_REPEATS:-1}
-ns=${BENCH_N_VALUES:-"5 10 15 20 25"}
+ns=${BENCH_N_VALUES:-"5 10 15 20 25 30"}
 # max_mem_gb=${BENCH_MAX_MEM_GB:-50}
 unroll_then_exit_data_path=$(realpath -m "output/unroll_then_exit_time_data.csv")
 time_data_path=$(realpath -m "output/time_data.csv")
@@ -160,7 +160,7 @@ benchone() {
 export unroll_then_exit_data_path time_data_path
 export -f realtime benchone err 
 
-parallel --progress --eta --no-notice --joblog output/joblog --resume --timeout 3600 -j$n_cores benchone {4} {1} {2} \
+parallel --progress --eta --no-notice --joblog output/joblog --resume --timeout 7200 -j$n_cores benchone {4} {1} {2} \
   ::: $ns\
   ::: expand_ac_uta simple_uta\
   ::: $(seq 1 $repeats)\
