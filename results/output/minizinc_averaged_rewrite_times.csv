@@ -1,24 +1,24 @@
 Model,n,Mean Rewrite Time (s)
-"Comprehension, no guards",10,0.11866666666666667
-"Comprehension, no guards",20,0.11266666666666666
-"Comprehension, no guards",30,0.134
-"Comprehension, no guards",40,0.16533333333333333
-"Comprehension, no guards",50,0.21733333333333332
-"Comprehension, no guards",60,0.30833333333333335
-"Comprehension, no guards",70,0.444
-"Comprehension, no guards",80,0.6183333333333333
-"Comprehension, no guards",90,0.832
-"Comprehension, no guards",100,1.065
-"Comprehension, no guards",110,1.4333333333333333
-"Comprehension, no guards",120,1.7846666666666666
-"Comprehension, no guards",130,2.2476666666666665
-"Comprehension, no guards",140,2.757
-"Comprehension, no guards",150,3.396666666666667
-"Comprehension, no guards",160,3.9979999999999998
-"Comprehension, no guards",170,4.972333333333333
-"Comprehension, no guards",180,5.6979999999999995
-"Comprehension, no guards",190,6.6066666666666665
-"Comprehension, no guards",200,7.821666666666666
+Forall,10,0.11866666666666667
+Forall,20,0.11266666666666666
+Forall,30,0.134
+Forall,40,0.16533333333333333
+Forall,50,0.21733333333333332
+Forall,60,0.30833333333333335
+Forall,70,0.444
+Forall,80,0.6183333333333333
+Forall,90,0.832
+Forall,100,1.065
+Forall,110,1.4333333333333333
+Forall,120,1.7846666666666666
+Forall,130,2.2476666666666665
+Forall,140,2.757
+Forall,150,3.396666666666667
+Forall,160,3.9979999999999998
+Forall,170,4.972333333333333
+Forall,180,5.6979999999999995
+Forall,190,6.6066666666666665
+Forall,200,7.821666666666666
 If,10,0.105
 If,20,0.12233333333333334
 If,30,0.16533333333333333

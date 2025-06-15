@@ -49,7 +49,8 @@ plot_rewrite_times <- function(name) {
     summarise(`Mean Rewrite Time (s)`=mean(`time_s`)) %>%
     rename(`Model` = `model`) %>%
     mutate(`Model` = case_when(
-      `Model` == "dynamic_guards" ~ "Comprehension, no guards",
+      (`Model` == "dynamic_guards" & name == "Savile Row") ~ "Comprehension, no guards",
+      (`Model` == "dynamic_guards" & name == "MiniZinc") ~ "Forall",
       `Model` == "guards_in_return_expression" ~ "Comprehension, no guards",
       `Model` == "comprehension_guards" ~ "Comprehension, with guards",
       `Model` == "static_guards" ~ "Comprehension, with guards",
