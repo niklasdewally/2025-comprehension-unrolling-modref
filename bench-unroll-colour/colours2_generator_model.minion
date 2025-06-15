@@ -1,0 +1,54 @@
+# original return expression:
+# forAll i, j, k : int(1..n) .
+#     i != j /\ j != k /\ i != k /\
+#     ( (x[j] - x[i]) * (y[k] - y[i]) = (x[k] - x[i]) * (y[j] - y[i]) ) ->
+#         !(colour[i,j] != 0 /\ colour[j,k] != 0 /\ colour[i,j] = colour[j,k])
+
+# for n=10
+
+# from conjure oxide output
+
+# find i: int(1..20)
+# find j: int(1..20)
+# find k: int(1..20)
+# find __0: bool
+# find __1: bool
+# find __2: bool
+# find __3: bool
+# find __4: bool
+# find __5: bool
+# find __6: bool
+# 
+# such that
+# 
+# (true != __4),
+# Reify(ReifyImply(WatchedLiteral(__6,false), __5), __4),
+# Reify(and([(i != j),(j != k),(i != k),__0;int(1..)]), __5),
+# Reify(and([__1,__2,__3;int(1..)]), __6)
+
+MINION 3
+
+**VARIABLES**
+BOOL a
+BOOL b
+BOOL c
+BOOL d
+BOOL e
+BOOL f
+BOOL g
+BOUND i {1..10}
+BOUND j {1..10}
+BOUND k {1..10}
+
+**CONSTRAINTS**
+
+w-notliteral(e, 0)
+reify(reifyimply(w-literal(g,0),f),e)
+reify(watched-and({diseq(i,j), diseq(j,k), diseq(i,k),w-literal(a,1)}),f)
+reify(watched-and({w-literal(a,1),w-literal(b,1),w-literal(c,1)}),g)
+
+**SEARCH**
+VARORDER [i,j,k]
+VARORDER AUX [a,b,c,d,e,f,g]
+
+**EOF**
