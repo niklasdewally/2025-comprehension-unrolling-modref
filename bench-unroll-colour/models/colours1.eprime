@@ -1,0 +1,13 @@
+given n : int
+given number_of_clusters : int
+
+given x : matrix [int(1..n)] of int
+given y : matrix [int(1..n)] of int
+
+find colour : matrix [int(1..n), int(1..n)] of int(0..number_of_clusters)
+
+$ Edge colours must be symmetric and diagonal must be zero
+such that
+    forAll i, j : int(1..n) .
+        colour[i,j] = colour[j,i] /\
+        (i = j -> colour[i,j] = 0)

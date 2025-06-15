@@ -21,10 +21,10 @@ err() {
 
 # parameters
 
-n_cores=${BENCH_N_CORES:-2}
+n_cores=${BENCH_N_CORES:-3}
 repeats=${BENCH_REPEATS:-2}
-ns=${BENCH_N_VALUES:-"10 20 30 40 50 60 70 80 90 100"}
-# max_mem_gb=${BENCH_MAX_MEM_GB:-50}
+ns=${BENCH_N_VALUES:-"10 20 30 40 50"}
+# max_mem_gb=${BENCH_MAX_MEM_GB:-300}
 unroll_then_exit_data_path=$(realpath -m "output/unroll_then_exit_time_data.csv")
 time_data_path=$(realpath -m "output/time_data.csv")
 
@@ -161,7 +161,7 @@ export unroll_then_exit_data_path time_data_path
 export -f realtime benchone err 
 
 # TODO: better way to deal with timeouts?
-parallel --progress --eta --no-notice --joblog output/joblog --resume --timeout 2400 --memfree=500G -j$n_cores benchone {1} {2} {4} \
+parallel --progress --eta --no-notice --joblog output/joblog --resume --timeout 3600 -j$n_cores benchone {1} {2} {4} \
   ::: $(find models/ -iname '*.eprime' -exec basename {} .eprime \; | sort)\
   ::: $ns\
   ::: $(seq 1 $repeats)\
