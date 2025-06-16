@@ -42,7 +42,8 @@ plot_rewrite_times <- function(name) {
 
   df <- read_table(input_file)
 
-  dfCleaned <- df %>% filter(`n` <= 200, `exit_code` == 0)
+  dfCleaned <- df %>% 
+    filter(`n` <= 200, `exit_code` == 0)
 
   dfGrouped <- dfCleaned %>% 
     group_by(`model`,`n`) %>% 
@@ -56,6 +57,8 @@ plot_rewrite_times <- function(name) {
       `Model` == "static_guards" ~ "Comprehension, with guards",
     .default = str_to_title(`Model`))) %>%
     mutate(`n` = as.numeric(`n`))
+
+  dfGrouped
 
   write_csv(dfGrouped,str_glue("output/{name_lower}_averaged_rewrite_times.csv"))
 
@@ -111,12 +114,22 @@ plot_triple_unrolling_time <- function() {
       `model` == "guards_in_return_expression" ~ "Triples, no comprehension guards",
       `model` == "colours1" ~ "Triangle Colouring #1",
       `model` == "colours2" ~ "Triangle Colouring #2", 
-      .default = `model`))
+      .default = `model`)) %>%
+    mutate(`bench` = case_when(
+      `bench` == "expand_ac" ~ "Full",
+      `bench` == "simple" ~ "Simple",
+      .default = `model`)) %>%
+    filter(`n` <= 100) %>% 
+    filter(`realtime_s` <= 1200)
+
+  write_csv(dfClean,"output/average_time_to_unroll.csv")
 
   # plot small multiple plots  
 
   tikz(file = "output/time_to_unroll.tikz", width = 10, height = 5,sanitize=TRUE)
 
+  # 20 minute timeout -- some parts of the data were ran with 1h timeouts, others with 20
+  # got some data for larger n, but not for simple 
   time_to_unroll <- ggplot(dfClean) + 
     ggplotTheme + 
     aes(x=`n`,y=`relative_realtime_s`, group = `bench`, colour=`bench`, shape=`bench`) + 
@@ -195,6 +208,26 @@ plot_triple_unrolling_time <- function() {
   dev.off()
 
   ggsave("output/triples_expressions_unrolled_log.pdf",expressions_unrolled_log)
+
+  tikz(file = "output/triples_expressions_unrolled_log_n_less_than_50.tikz", width = 5, height = 5, sanitize=TRUE)
+  expressions_unrolled <- ggplot(dfClean %>% filter(`model` == "Triples, no comprehension guards") %>% filter(`n`<=50)) +
+    ggplotTheme + 
+    aes(x=`n`,y=`relative_n_exprs_in_expansion`, group = `bench`, colour=`bench`, shape=`bench`) + 
+    geom_line() +
+    geom_point(size=1) + 
+    scale_x_continuous(breaks=scales::breaks_width(20)) +
+    xlab("n") + 
+    ylab("Expressions in expansion (relative to smallest)") + 
+    labs(colour= "Expansion method",shape="Expansion method")
+
+  expressions_unrolled_log <- expressions_unrolled + 
+    scale_y_log10(labels = label_log()) + 
+    ylab("Expressions in expansion (relative to smallest)")
+
+  print(expressions_unrolled_log)
+  dev.off()
+
+  ggsave("output/triples_expressions_unrolled_log_n_less_than_50.pdf",expressions_unrolled_log)
 
   tikz(file = "output/triples_time_to_unroll.tikz", width = 5, height = 5, sanitize = TRUE )
   time_to_unroll <- ggplot(dfClean %>% filter(`model` == "Triples, no comprehension guards")) + 
